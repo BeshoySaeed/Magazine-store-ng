@@ -32,6 +32,7 @@ import { StoreModule } from '@ngrx/store';
 import { bookReducer } from 'src/app/store/books.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { BooksEffect } from 'src/app/store/books.effect';
+import { ChartModule } from 'angular-highcharts';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { BooksEffect } from 'src/app/store/books.effect';
     ReactiveFormsModule,
     StoreModule.forFeature('myBook', bookReducer),
     EffectsModule.forFeature([BooksEffect]),
+    ChartModule,
   ],
 })
 export class AdminModule {}
