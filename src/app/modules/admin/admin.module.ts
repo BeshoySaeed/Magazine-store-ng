@@ -22,6 +22,16 @@ import { AddCategoryComponent } from './category/add-category/add-category.compo
 import { EditCategoryComponent } from './category/edit-category/edit-category.component';
 import { AddBookComponent } from './Book/add-book/add-book.component';
 import { EditBookComponent } from './Book/edit-book/edit-book.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatRadioModule } from '@angular/material/radio';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { bookReducer } from 'src/app/store/books.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { BooksEffect } from 'src/app/store/books.effect';
 
 @NgModule({
   declarations: [
@@ -50,6 +60,15 @@ import { EditBookComponent } from './Book/edit-book/edit-book.component';
     MatPaginatorModule,
     MatSortModule,
     MatSortModule,
+    MatSelectModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatRadioModule,
+    FormsModule,
+    ReactiveFormsModule,
+    StoreModule.forFeature('myBook', bookReducer),
+    EffectsModule.forFeature([BooksEffect]),
   ],
 })
 export class AdminModule {}

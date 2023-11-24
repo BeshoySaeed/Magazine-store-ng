@@ -1,1 +1,28 @@
-<p>add-category works!</p>
+<div class="container">
+  <form [formGroup]="bookForm" #form="ngForm" (ngSubmit)="submit()">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+
+    <mat-radio-group aria-label="Select an option" formControlName="available">
+      <mat-radio-button value="1">Available</mat-radio-button>
+      <mat-radio-button value="2">Not Available</mat-radio-button>
+    </mat-radio-group>
+
+    <button type="button" mat-raised-button (click)="fileInput.click()">
+      Choose File
+    </button>
+    <input
+      hidden
+      (change)="onFileSelected()"
+      #fileInput
+      type="file"
+      id="file"
+      formControlName="img"
+    />
+
+    <button mat-button color="accent" [disabled]="form.invalid">Add</button>
+    <a mat-raised-button color="warn" (click)="close()">Close</a>
+  </form>
+</div>
