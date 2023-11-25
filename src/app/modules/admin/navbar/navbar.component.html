@@ -9,22 +9,45 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="/">Dashboard</a>
+      <a mat-list-item routerLink="Users">Users</a>
+      <a mat-list-item routerLink="Orders">Orders</a>
       <a mat-list-item routerLink="book">Books</a>
       <a mat-list-item routerLink="category">Category</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-      >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span>DashBoard</span>
+    <mat-toolbar color="primary" class="sidebar">
+      <div class="toggle-logo">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+        >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span>DashBoard</span>
+      </div>
+      <div class="data">
+        <div class="admin-options">
+          <div class="messages">
+            <fa-icon [icon]="message"></fa-icon>
+            <div class="messages-data">{{ messageNumber }}</div>
+          </div>
+          <div class="messages">
+            <fa-icon [icon]="message"></fa-icon>
+            <div class="messages-data">{{ messageNumber }}</div>
+          </div>
+          <div class="messages">
+            <fa-icon [icon]="message"></fa-icon>
+            <div class="messages-data">{{ messageNumber }}</div>
+          </div>
+        </div>
+        <div class="admin-data">
+          <img src="" alt="" />
+          <h1>bishoy</h1>
+        </div>
+      </div>
     </mat-toolbar>
-    <!-- Add Content Here -->
   </mat-sidenav-content>
 </mat-sidenav-container>

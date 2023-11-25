@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { CategoryService } from 'src/app/services/category/category.service';
 
 @Component({
   selector: 'app-add-category',
@@ -10,10 +12,15 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class AddCategoryComponent {
   bookForm: FormGroup;
   srcResult: any;
-  constructor(private dialog: MatDialogRef<AddCategoryComponent>) {
+  formData!: FormData;
+  constructor(
+    private dialog: MatDialogRef<AddCategoryComponent>,
+    private httpCategory: CategoryService,
+    private route: Router
+  ) {
     this.bookForm = new FormGroup({
       name: new FormControl('', [Validators.required]),
-      available: new FormControl('', [Validators.required]),
+      active: new FormControl('', [Validators.required]),
       img: new FormControl('', [Validators.required]),
     });
   }
@@ -23,10 +30,18 @@ export class AddCategoryComponent {
   }
 
   submit() {
-    console.log(this.bookForm.errors);
+    this.formData.append('name', this.bookForm.get('name')?.value);
+    this.formData.append('active', this.bookForm.get('active')?.value);
+    this.httpCategory.add(this.formData).subscribe((data) => {
+      console.log(data);
+      this.close();
+    });
   }
 
-  onFileSelected() {
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    this.formData = new FormData();
+    this.formData.append('img', file);
     const inputNode: any = document.querySelector('#file');
 
     if (typeof FileReader !== 'undefined') {

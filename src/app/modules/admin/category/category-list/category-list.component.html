@@ -13,12 +13,18 @@
     <!-- Image Column -->
     <ng-container matColumnDef="image">
       <th mat-header-cell *matHeaderCellDef>Image</th>
-      <td mat-cell *matCellDef="let element">{{ element.img }}</td>
+      <td mat-cell *matCellDef="let element">
+        <img
+          width="200"
+          src="http://localhost:8000/images/category/{{ element.img }}"
+          [alt]="element.name"
+        />
+      </td>
     </ng-container>
 
-    <ng-container matColumnDef="available">
-      <th mat-header-cell *matHeaderCellDef>available</th>
-      <td mat-cell *matCellDef="let element">{{ element.available }}</td>
+    <ng-container matColumnDef="active">
+      <th mat-header-cell *matHeaderCellDef>active</th>
+      <td mat-cell *matCellDef="let element">{{ element.active }}</td>
     </ng-container>
 
     <!-- Options Column -->
@@ -26,8 +32,12 @@
       <th mat-header-cell *matHeaderCellDef>Options</th>
       <td mat-cell *matCellDef="let element">
         <div class="icons">
-          <a> <fa-icon [icon]="edit" class="edit"></fa-icon></a>
-          <a> <fa-icon [icon]="trash" class="delete"></fa-icon></a>
+          <a (click)="openEdit(element.id)">
+            <fa-icon [icon]="edit" class="edit"></fa-icon
+          ></a>
+          <a (click)="delete(element.id)">
+            <fa-icon [icon]="trash" class="delete"></fa-icon
+          ></a>
         </div>
       </td>
     </ng-container>

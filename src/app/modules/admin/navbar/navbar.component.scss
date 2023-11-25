@@ -15,3 +15,60 @@
   top: 0;
   z-index: 1;
 }
+
+.toggle-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.data {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.admin-data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fe5722;
+  height: 100%;
+  padding: 0 30px;
+  position: relative;
+  right: -16px;
+}
+
+.admin-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.messages {
+  position: relative;
+  cursor: pointer;
+  margin-right: 12px;
+
+  &:hover {
+    transform: rotate(20deg);
+  }
+}
+.messages-data {
+  position: absolute;
+  font-size: 12px;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  border-radius: 50%;
+  top: -7px;
+  left: 7px;
+}
