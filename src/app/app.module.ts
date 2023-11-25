@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartModule } from 'angular-highcharts';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import { ChartModule } from 'angular-highcharts';
     ReactiveFormsModule,
     HttpClientModule,
     ChartModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

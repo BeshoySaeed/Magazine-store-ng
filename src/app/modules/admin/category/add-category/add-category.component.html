@@ -1,4 +1,5 @@
 <div class="container">
+  <h1>Add Category</h1>
   <form [formGroup]="bookForm" #form="ngForm" (ngSubmit)="submit()">
     <mat-form-field>
       <mat-label>Name</mat-label>
@@ -22,7 +23,9 @@
       formControlName="img"
     />
 
-    <button mat-button color="accent" [disabled]="form.invalid">Add</button>
+    <button mat-button color="accent" class="mt-5" [disabled]="form.invalid">
+      Add
+    </button>
     <a mat-raised-button color="warn" (click)="close()">Close</a>
   </form>
 </div>

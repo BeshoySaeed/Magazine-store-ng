@@ -17,11 +17,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { CategoryListComponent } from './category/category-list/category-list.component';
-import { BookListComponent } from './Book/book-list/book-list.component';
 import { AddCategoryComponent } from './category/add-category/add-category.component';
 import { EditCategoryComponent } from './category/edit-category/edit-category.component';
-import { AddBookComponent } from './Book/add-book/add-book.component';
-import { EditBookComponent } from './Book/edit-book/edit-book.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -33,16 +30,20 @@ import { bookReducer } from 'src/app/store/books.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { BooksEffect } from 'src/app/store/books.effect';
 import { ChartModule } from 'angular-highcharts';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BooksListComponent } from './Book/books-list/books-list.component';
+import { AddBookComponent } from './Book/add-book/add-book.component';
+import { EditBookComponent } from './Book/edit-category/edit-book.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     AdminPageComponent,
     DashboardComponent,
-    BookListComponent,
     CategoryListComponent,
     AddCategoryComponent,
     EditCategoryComponent,
+    BooksListComponent,
     AddBookComponent,
     EditBookComponent,
   ],
@@ -71,6 +72,7 @@ import { ChartModule } from 'angular-highcharts';
     StoreModule.forFeature('myBook', bookReducer),
     EffectsModule.forFeature([BooksEffect]),
     ChartModule,
+    FontAwesomeModule,
   ],
 })
 export class AdminModule {}

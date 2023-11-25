@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { AddBookComponent } from '../../Book/add-book/add-book.component';
 
 @Component({
   selector: 'app-add-category',
@@ -11,7 +10,7 @@ import { AddBookComponent } from '../../Book/add-book/add-book.component';
 export class AddCategoryComponent {
   bookForm: FormGroup;
   srcResult: any;
-  constructor(private dialog: MatDialogRef<AddBookComponent>) {
+  constructor(private dialog: MatDialogRef<AddCategoryComponent>) {
     this.bookForm = new FormGroup({
       name: new FormControl('', [Validators.required]),
       available: new FormControl('', [Validators.required]),

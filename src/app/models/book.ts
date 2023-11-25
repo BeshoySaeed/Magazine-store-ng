@@ -2,6 +2,7 @@ export interface Book {
   id?: number;
   name: string;
   price: string;
-  Category: string;
+  category: string;
   image: string;
+  available: number;
 }

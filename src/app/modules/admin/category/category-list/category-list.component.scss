@@ -1,9 +1,33 @@
-.full-width-table {
-  width: 100%;
+.icons {
+  display: flex;
+  a {
+    cursor: pointer;
+    fa-icon {
+      margin-left: 5px;
+      font-size: 18px;
+    }
+    .edit {
+      color: green;
+      transition: 0.3s;
+
+      &:hover {
+        color: palevioletred;
+      }
+    }
+    .delete {
+      color: red;
+      transition: 0.3s;
+
+      &:hover {
+        color: rgb(145, 94, 14);
+      }
+    }
+  }
 }
+
 .title {
   display: flex;
-  padding: 10px;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
 }

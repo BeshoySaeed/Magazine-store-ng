@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { BookListComponent } from './Book/book-list/book-list.component';
 import { CategoryListComponent } from './category/category-list/category-list.component';
+import { BooksListComponent } from './Book/books-list/books-list.component';
 
 const routes: Routes = [
   {
@@ -14,13 +14,14 @@ const routes: Routes = [
         path: '',
         component: DashboardComponent,
       },
-      {
-        path: 'book',
-        component: BookListComponent,
-      },
+
       {
         path: 'category',
         component: CategoryListComponent,
+      },
+      {
+        path: 'book',
+        component: BooksListComponent,
       },
     ],
   },
